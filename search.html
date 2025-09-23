@@ -4,6 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Recipe Finder - Search</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -14,6 +17,12 @@
                 <li><a href="index.html">Home</a></li>
                 <li><a href="search.html">Search</a></li>
                 <li><a href="profile.html">Profile</a></li>
+                <li>
+                    <div class="theme-switch">
+                        <input type="checkbox" id="theme-toggle">
+                        <label for="theme-toggle"></label>
+                    </div>
+                </li>
             </ul>
         </nav>
     </header>
@@ -24,20 +33,28 @@
             <input type="text" id="ingredient-input" placeholder="Enter ingredients like 'chicken, rice'...">
             <button id="search-btn">Search</button>
         </div>
-
-        <div class="recipe-results" id="recipe-results">
-        </div>
+        <div class="recipe-results" id="recipe-results"></div>
     </main>
 
     <footer>
-        <p>&copy; 2025 Recipe Finder</p>
+        <div class="footer-content">
+            <p>&copy; 2025 Recipe Finder by Tajuddin Usman Khan</p>
+            <p>Student at VIT-AP University, Andhra Pradesh</p>
+            <div class="footer-links">
+                <a href="https://github.com/usmankhan616" target="_blank">GitHub</a> |
+                <a href="https://www.linkedin.com/in/tajuddin-usman-khan-7b1a0429a/" target="_blank">LinkedIn</a> |
+                <a href="mailto:usmankhantajuddin@gmail.com">Contact</a>
+            </div>
+        </div>
     </footer>
+
     <div id="recipe-modal" class="modal-overlay hidden">
         <div class="modal-content">
             <button class="modal-close-btn">&times;</button>
             <div id="modal-body"></div>
         </div>
     </div>
+    
     <script src="js/app.js"></script>
 </body>
 </html>

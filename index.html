@@ -4,6 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Recipe Finder - Home</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -14,17 +17,63 @@
                 <li><a href="index.html">Home</a></li>
                 <li><a href="search.html">Search</a></li>
                 <li><a href="profile.html">Profile</a></li>
+                <li>
+                    <div class="theme-switch">
+                        <input type="checkbox" id="theme-toggle">
+                        <label for="theme-toggle"></label>
+                    </div>
+                </li>
             </ul>
         </nav>
     </header>
 
     <main>
-        <h1>Welcome to Recipe Finder</h1>
-        <p>Discover the art of cooking. Find amazing recipes using the ingredients you already have at home or explore creations from our community.</p>
+        <section class="hero">
+            <h1>Find Your Next Favorite Meal</h1>
+            <p>Discover thousands of recipes using the ingredients you already have.</p>
+            <a href="search.html" class="cta-button">Start Searching</a>
+        </section>
+
+        <section class="featured-recipes">
+            <h2>Featured Recipes</h2>
+            <div class="recipe-results">
+                <div class="recipe-block">
+                    <img src="https://spoonacular.com/recipeImages/716429-312x231.jpg" alt="Pasta">
+                    <div class="recipe-content">
+                        <h2>Pasta with Garlic & Tomatoes</h2>
+                        <p>A simple, elegant, and delicious classic.</p>
+                    </div>
+                </div>
+                <div class="recipe-block">
+                    <img src="https://spoonacular.com/recipeImages/641166-312x231.jpg" alt="Curry">
+                    <div class="recipe-content">
+                        <h2>Hearty Vegetable Curry</h2>
+                        <p>A warm and flavorful dish for any night.</p>
+                    </div>
+                </div>
+                <div class="recipe-block">
+                    <img src="https://spoonacular.com/recipeImages/715594-312x231.jpg" alt="Salad">
+                    <div class="recipe-content">
+                        <h2>Fresh Berry & Spinach Salad</h2>
+                        <p>A light and refreshing summer favorite.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
     </main>
 
     <footer>
-        <p>&copy; 2025 Recipe Finder</p>
+        <div class="footer-content">
+            <p>&copy; 2025 Recipe Finder by Tajuddin Usman Khan</p>
+            <p>Student at VIT-AP University, Andhra Pradesh</p>
+            <div class="footer-links">
+                <a href="https://github.com/usmankhan616" target="_blank">GitHub</a> |
+                <a href="https://www.linkedin.com/in/tajuddin-usman-khan-7b1a0429a/" target="_blank">LinkedIn</a> |
+                <a href="mailto:usmankhantajuddin@gmail.com">Contact</a>
+            </div>
+        </div>
     </footer>
+
+    <script src="js/app.js"></script>
 </body>
 </html>
