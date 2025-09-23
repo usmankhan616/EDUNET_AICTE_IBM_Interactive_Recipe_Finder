@@ -91,3 +91,60 @@ footer {
     max-width: 100%;
     border-radius: 4px;
 }
+/* Modal Styling */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.modal-content {
+    background-color: #fff;
+    padding: 2rem;
+    border-radius: 8px;
+    width: 90%;
+    max-width: 700px;
+    max-height: 80vh;
+    overflow-y: auto;
+    position: relative;
+}
+
+.modal-close-btn {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 2rem;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.hidden {
+    display: none;
+}
+
+.recipe-block {
+    cursor: pointer; /* Add this to show it's clickable */
+}
+
+/* Styles for recipe details inside the modal */
+#modal-body h2 {
+    margin-top: 0;
+}
+
+#modal-body img {
+    max-width: 100%;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+}
+
+#modal-body ul, #modal-body ol {
+    padding-left: 20px;
+}

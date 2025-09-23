@@ -21,21 +21,23 @@
     <main>
         <h1>Search for Recipes</h1>
         <div class="search-container">
-            <input type="text" placeholder="Enter ingredients like 'chicken, rice'...">
-            <button>Search</button>
+            <input type="text" id="ingredient-input" placeholder="Enter ingredients like 'chicken, rice'...">
+            <button id="search-btn">Search</button>
         </div>
 
-        <div class="recipe-results">
-            <div class="recipe-block">
-                <img src="https://via.placeholder.com/300" alt="Food Image">
-                <h2>Recipe Title Here</h2>
-                <p><strong>Ingredients:</strong> Item 1, Item 2, Item 3</p>
-            </div>
+        <div class="recipe-results" id="recipe-results">
         </div>
     </main>
 
     <footer>
         <p>&copy; 2025 Recipe Finder</p>
     </footer>
+    <div id="recipe-modal" class="modal-overlay hidden">
+        <div class="modal-content">
+            <button class="modal-close-btn">&times;</button>
+            <div id="modal-body"></div>
+        </div>
+    </div>
+    <script src="js/app.js"></script>
 </body>
 </html>
