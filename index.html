@@ -7,6 +7,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -28,35 +29,116 @@
     </header>
 
     <main>
-        <section class="hero">
-            <h1>Find Your Next Favorite Meal</h1>
+        <div class="hero">
+            <h1 class="text-center">Find Your Next Favorite Meal</h1>
             <p>Discover thousands of recipes using the ingredients you already have.</p>
             <a href="search.html" class="cta-button">Start Searching</a>
-        </section>
+        </div>
 
-        <section class="featured-recipes">
-            <h2>Featured Recipes</h2>
-            <div class="recipe-results">
-                <div class="recipe-block">
-                    <img src="https://spoonacular.com/recipeImages/716429-312x231.jpg" alt="Pasta">
-                    <div class="recipe-content">
-                        <h2>Pasta with Garlic & Tomatoes</h2>
-                        <p>A simple, elegant, and delicious classic.</p>
-                    </div>
+        <section class="featured-recipes container">
+            <h2 class="text-center">Featured Recipes</h2>
+            <div class="row justify-content-center">
+                <div class="col-12 col-md-6 col-lg-4 mb-4">
+                    <a href="search.html?query=Pasta%20with%20Garlic" class="recipe-link">
+                        <div class="recipe-block">
+                            <div class="card-image-container">
+                                <img src="https://spoonacular.com/recipeImages/716429-312x231.jpg" alt="Pasta">
+                            </div>
+                            <div class="card-content">
+                                <div class="card-title-row">
+                                    <h4>Pasta with Garlic & Tomatoes</h4>
+                                </div>
+                                <div class="card-info-row">
+                                    <p>Click to search recipe</p>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
                 </div>
-                <div class="recipe-block">
-                    <img src="https://spoonacular.com/recipeImages/641166-312x231.jpg" alt="Curry">
-                    <div class="recipe-content">
-                        <h2>Hearty Vegetable Curry</h2>
-                        <p>A warm and flavorful dish for any night.</p>
-                    </div>
+                <div class="col-12 col-md-6 col-lg-4 mb-4">
+                    <a href="search.html?query=Vegetable%20Curry" class="recipe-link">
+                        <div class="recipe-block">
+                            <div class="card-image-container">
+                                <img src="https://spoonacular.com/recipeImages/641166-312x231.jpg" alt="Curry">
+                            </div>
+                            <div class="card-content">
+                                <div class="card-title-row">
+                                    <h4>Hearty Vegetable Curry</h4>
+                                </div>
+                                <div class="card-info-row">
+                                    <p>Click to search recipe</p>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
                 </div>
-                <div class="recipe-block">
-                    <img src="https://spoonacular.com/recipeImages/715594-312x231.jpg" alt="Salad">
-                    <div class="recipe-content">
-                        <h2>Fresh Berry & Spinach Salad</h2>
-                        <p>A light and refreshing summer favorite.</p>
-                    </div>
+                <div class="col-12 col-md-6 col-lg-4 mb-4">
+                    <a href="search.html?query=Spinach%20Salad" class="recipe-link">
+                        <div class="recipe-block">
+                            <div class="card-image-container">
+                                <img src="https://spoonacular.com/recipeImages/715594-312x231.jpg" alt="Salad">
+                            </div>
+                            <div class="card-content">
+                                <div class="card-title-row">
+                                    <h4>Fresh Berry & Spinach Salad</h4>
+                                </div>
+                                <div class="card-info-row">
+                                    <p>Click to search recipe</p>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-12 col-md-6 col-lg-4 mb-4">
+                    <a href="search.html?query=Tomato%20Basil%20Soup" class="recipe-link">
+                        <div class="recipe-block">
+                            <div class="card-image-container">
+                                <img src="https://spoonacular.com/recipeImages/663559-312x231.jpg" alt="Tomato Soup">
+                            </div>
+                            <div class="card-content">
+                                <div class="card-title-row">
+                                    <h4>Classic Tomato Basil Soup</h4>
+                                </div>
+                                <div class="card-info-row">
+                                    <p>Click to search recipe</p>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-12 col-md-6 col-lg-4 mb-4">
+                    <a href="search.html?query=Pancakes" class="recipe-link">
+                        <div class="recipe-block">
+                            <div class="card-image-container">
+                                <img src="https://spoonacular.com/recipeImages/654959-312x231.jpg" alt="Pancakes">
+                            </div>
+                            <div class="card-content">
+                                <div class="card-title-row">
+                                    <h4>Fluffy Buttermilk Pancakes</h4>
+                                </div>
+                                <div class="card-info-row">
+                                    <p>Click to search recipe</p>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-12 col-md-6 col-lg-4 mb-4">
+                    <a href="search.html?query=Beef%20Tacos" class="recipe-link">
+                        <div class="recipe-block">
+                            <div class="card-image-container">
+                                <img src="https://spoonacular.com/recipeImages/634433-312x231.jpg" alt="Tacos">
+                            </div>
+                            <div class="card-content">
+                                <div class="card-title-row">
+                                    <h4>Classic Ground Beef Tacos</h4>
+                                </div>
+                                <div class="card-info-row">
+                                    <p>Click to search recipe</p>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
                 </div>
             </div>
         </section>
@@ -64,16 +146,36 @@
 
     <footer>
         <div class="footer-content">
+            <div class="footer-column">
+                <h4>Recipe Finder</h4>
+                <p class="footer-about">Recipe Finder helps you discover and share amazing recipes from around the world. Explore, cook, and enjoy!</p>
+                <div class="footer-social">
+                    <a href="https://www.instagram.com/" target="_blank">Instagram</a>
+                    <a href="https://www.facebook.com/" target="_blank">Facebook</a>
+                    <a href="https://twitter.com/" target="_blank">Twitter</a>
+                </div>
+            </div>
+            <div class="footer-column">
+                <h4>Quick Links</h4>
+                <div class="footer-quick-links">
+                    <a href="index.html">Home</a>
+                    <a href="search.html">Search</a>
+                    <a href="profile.html">Profile</a>
+                    <a href="#">Privacy Policy</a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
             <p>&copy; 2025 Recipe Finder by Tajuddin Usman Khan</p>
-            <p>Student at VIT-AP University, Andhra Pradesh</p>
             <div class="footer-links">
-                <a href="https://github.com/usmankhan616" target="_blank">GitHub</a> |
-                <a href="https://www.linkedin.com/in/tajuddin-usman-khan-7b1a0429a/" target="_blank">LinkedIn</a> |
+                <a href="https://github.com/usmankhan616" target="_blank">GitHub</a>
+                <a href="https://www.linkedin.com/in/tajuddin-usman-khan-7b1a0429a/" target="_blank">LinkedIn</a>
                 <a href="mailto:usmankhantajuddin@gmail.com">Contact</a>
             </div>
         </div>
     </footer>
 
+    
     <script src="js/app.js"></script>
 </body>
 </html>

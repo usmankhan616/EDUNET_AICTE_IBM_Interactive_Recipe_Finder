@@ -36,6 +36,13 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
 
+        const urlParams = new URLSearchParams(window.location.search);
+        const searchQuery = urlParams.get('query');
+        if (searchQuery) {
+            ingredientInput.value = searchQuery;
+            searchRecipes();
+        }
+
         async function searchRecipes() {
             const ingredients = ingredientInput.value.trim();
             if (ingredients === '') {
@@ -44,7 +51,8 @@ document.addEventListener('DOMContentLoaded', () => {
             }
 
             recipeResults.innerHTML = '<p>Searching for recipes...</p>';
-            const url = `https://api.spoonacular.com/recipes/findByIngredients?ingredients=${ingredients}&number=10&apiKey=${API_KEY}`;
+            const url = `https://api.spoonacular.com/recipes/complexSearch?query=${ingredients}&number=12&apiKey=${API_KEY}`;
+
 
             try {
                 const response = await fetch(url);
@@ -52,7 +60,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     throw new Error(`HTTP error! status: ${response.status}`);
                 }
                 const data = await response.json();
-                displayRecipes(data);
+                displayRecipes(data.results);
             } catch (error) {
                 recipeResults.innerHTML = '<p>Sorry, something went wrong. Please check your API key or try again later.</p>';
                 console.error("Fetch error:", error);
@@ -67,11 +75,19 @@ document.addEventListener('DOMContentLoaded', () => {
 
             const recipeHTML = recipes.map(recipe => {
                 return `
-                    <div class="recipe-block" data-id="${recipe.id}">
-                        <img src="${recipe.image}" alt="${recipe.title}">
-                        <div class="recipe-content">
-                            <h2>${recipe.title}</h2>
-                            <p><strong>Missing Ingredients:</strong> ${recipe.missedIngredientCount}</p>
+                    <div class="col-12 col-md-6 col-lg-4 mb-4">
+                        <div class="recipe-block" data-id="${recipe.id}">
+                            <div class="card-image-container">
+                                <img src="${recipe.image}" alt="${recipe.title}">
+                            </div>
+                            <div class="card-content">
+                                <div class="card-title-row">
+                                    <h4>${recipe.title}</h4>
+                                </div>
+                                <div class="card-info-row">
+                                    <p>Click to view recipe</p>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 `;
