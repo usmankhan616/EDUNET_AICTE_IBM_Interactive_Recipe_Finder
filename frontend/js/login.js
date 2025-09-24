@@ -4,14 +4,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const formTitle = document.getElementById('form-title');
     const submitBtn = document.getElementById('submit-btn');
-    const switchLink = document.getElementById('switch-link');
     const switchText = document.getElementById('switch-text');
     const messageDiv = document.getElementById('message');
     
     let isLoginMode = true;
 
-    switchLink.addEventListener('click', (e) => {
-        e.preventDefault();
+    function switchMode(e) {
+        if (e) e.preventDefault();
         isLoginMode = !isLoginMode;
 
         if (isLoginMode) {
@@ -23,8 +22,10 @@ document.addEventListener('DOMContentLoaded', () => {
             submitBtn.textContent = 'Register';
             switchText.innerHTML = 'Already have an account? <a href="#" id="switch-link">Login here</a>';
         }
-        document.getElementById('switch-link').addEventListener('click', arguments.callee);
-    });
+        document.getElementById('switch-link').addEventListener('click', switchMode);
+    }
+    
+    document.getElementById('switch-link').addEventListener('click', switchMode);
 
     form.addEventListener('submit', async (e) => {
         e.preventDefault();
@@ -32,10 +33,9 @@ document.addEventListener('DOMContentLoaded', () => {
         const password = document.getElementById('password').value;
 
         const endpoint = isLoginMode ? '/api/login' : '/api/register';
-        const url = `${endpoint}`;
-
+        
         try {
-            const response = await fetch(url, {
+            const response = await fetch(endpoint, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -48,7 +48,7 @@ document.addEventListener('DOMContentLoaded', () => {
             if (!response.ok) {
                 throw new Error(data.msg || 'Something went wrong');
             }
-
+            
             if (isLoginMode) {
                 localStorage.setItem('token', data.token);
                 window.location.href = 'index.html';
