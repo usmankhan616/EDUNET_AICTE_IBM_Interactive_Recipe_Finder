@@ -6,16 +6,18 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (currentTheme) {
         document.body.classList.add(currentTheme);
-        if (currentTheme === 'dark-mode') {
+        if (currentTheme === 'dark-mode' && themeToggle) {
             themeToggle.checked = true;
         }
     }
 
-    themeToggle.addEventListener('change', () => {
-        document.body.classList.toggle('dark-mode');
-        let theme = document.body.classList.contains('dark-mode') ? 'dark-mode' : 'light-mode';
-        localStorage.setItem('theme', theme);
-    });
+    if (themeToggle) {
+        themeToggle.addEventListener('change', () => {
+            document.body.classList.toggle('dark-mode');
+            let theme = document.body.classList.contains('dark-mode') ? 'dark-mode' : 'light-mode';
+            localStorage.setItem('theme', theme);
+        });
+    }
 
 
     // --- RECIPE SEARCH LOGIC (Only runs if search elements exist) ---
@@ -53,7 +55,6 @@ document.addEventListener('DOMContentLoaded', () => {
             recipeResults.innerHTML = '<p>Searching for recipes...</p>';
             const url = `https://api.spoonacular.com/recipes/complexSearch?query=${ingredients}&number=12&apiKey=${API_KEY}`;
 
-
             try {
                 const response = await fetch(url);
                 if (!response.ok) {
@@ -68,7 +69,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
         function displayRecipes(recipes) {
-            if (recipes.length === 0) {
+            if (!recipes || recipes.length === 0) {
                 recipeResults.innerHTML = '<p>No recipes found. Try different ingredients.</p>';
                 return;
             }
@@ -125,7 +126,10 @@ document.addEventListener('DOMContentLoaded', () => {
             const instructionsHTML = recipe.instructions ? recipe.instructions.split('\n').filter(step => step).map(step => `<li>${step}</li>`).join('') : '<li>No instructions available.</li>';
 
             const detailsHTML = `
-                <h2>${recipe.title}</h2>
+                <div class="modal-header-content">
+                    <h2>${recipe.title}</h2>
+                    <button id="save-recipe-btn" class="btn btn-primary" data-recipe-id="${recipe.id}">Save Recipe</button>
+                </div>
                 <img src="${recipe.image}" alt="${recipe.title}">
                 <h3>Ingredients:</h3>
                 <ul>${ingredientsHTML}</ul>
@@ -135,6 +139,41 @@ document.addEventListener('DOMContentLoaded', () => {
 
             modalBody.innerHTML = detailsHTML;
             openModal();
+
+            document.getElementById('save-recipe-btn').addEventListener('click', saveRecipe);
+        }
+
+        async function saveRecipe(e) {
+            const recipeId = e.target.dataset.recipeId;
+            const token = localStorage.getItem('token');
+
+            if (!token) {
+                alert('Please log in to save recipes.');
+                return;
+            }
+
+            try {
+                const response = await fetch('http://localhost:5000/api/recipes/save', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Authorization': `Bearer ${token}`
+                    },
+                    body: JSON.stringify({ recipeId })
+                });
+
+                if (!response.ok) {
+                    const errorData = await response.json();
+                    throw new Error(errorData.msg || 'Failed to save recipe');
+                }
+
+                const data = await response.json();
+                e.target.textContent = 'Saved!';
+                e.target.disabled = true;
+                
+            } catch (error) {
+                alert(error.message);
+            }
         }
 
         function openModal() {

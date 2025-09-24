@@ -9,7 +9,10 @@ const UserSchema = new mongoose.Schema({
     password: {
         type: String,
         required: true
-    }
+    },
+    savedRecipes: [{
+        type: Number
+    }]
 });
 
 const User = mongoose.model('User', UserSchema);
