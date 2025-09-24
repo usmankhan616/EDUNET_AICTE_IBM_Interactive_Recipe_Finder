@@ -29,7 +29,7 @@ document.addEventListener('DOMContentLoaded', () => {
         if (!token) return;
 
         try {
-            const res = await fetch('http://localhost:5000/api/recipes/saved', {
+            const res = await fetch('/api/recipes/saved', {
                 headers: { 'Authorization': `Bearer ${token}` }
             });
 
