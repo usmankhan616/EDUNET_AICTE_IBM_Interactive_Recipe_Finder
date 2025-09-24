@@ -15,12 +15,13 @@ You can view the live deployed application here: **[Your Vercel Link Here]**
 
 Here's a look at the application in action.
 
-| Home Page | Search Results | Recipe Details |
-| :---: | :---: | :---: |
-| **[Your Screenshot of the Home Page]** | **[Your Screenshot of the Search Results]** | **[Your Screenshot of the Recipe Modal]** |
-*(After you create the file, you can drag and drop your screenshots into this section on the GitHub website to upload them.)*
+| Home Page | Search Results | profile section | Recipe Details |
+| :---: | :---: | :---: | :---: |
+| **<img width="1918" height="885" alt="Screenshot 2025-09-24 093803" src="https://github.com/user-attachments/assets/7cc2ae91-1a50-4d1c-8d9d-0b3ec0eb131f" />** | **<img width="1919" height="883" alt="Screenshot 2025-09-24 093913" src="https://github.com/user-attachments/assets/e92f2b32-5b0a-41a6-9f86-cd47417d2f08" />** | **<img width="1919" height="878" alt="Screenshot 2025-09-24 093749" src="https://github.com/user-attachments/assets/11f61e04-b9ef-4313-8c41-72586121cbb9" />** | **<img width="1919" height="890" alt="image" src="https://github.com/user-attachments/assets/0ce2fed4-1d23-4080-b94e-2ad2173e2a53" />**| 
 
 -----
+
+
 
 ## ✨ Features
 
