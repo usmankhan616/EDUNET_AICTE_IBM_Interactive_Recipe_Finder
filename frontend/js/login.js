@@ -32,7 +32,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const password = document.getElementById('password').value;
 
         const endpoint = isLoginMode ? '/api/login' : '/api/register';
-        const url = `http://localhost:5000${endpoint}`;
+        const url = `${endpoint}`;
 
         try {
             const response = await fetch(url, {
