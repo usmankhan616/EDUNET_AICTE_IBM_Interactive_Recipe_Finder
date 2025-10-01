@@ -7,7 +7,7 @@ An intuitive web application that helps users discover new recipes based on the 
 
 ### Live Demo
 
-You can view the live deployed application here: **[Your Vercel Link Here]**
+You can view the live deployed application here: **[[Your Vercel Link Here]](https://interactiverecipeapp.vercel.app/login.html)**
 
 -----
 
